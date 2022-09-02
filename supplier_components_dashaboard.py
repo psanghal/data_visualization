@@ -265,7 +265,7 @@ def supplier_dashaboard(data = 'filename_csv',
                      color = color_condition, 
                      opacity= opacity_condition, 
                      tooltip =[alt.Tooltip(field = dropdown_2, type = 'nominal'),
-                               #alt.Tooltip(field = dropdown_1, type = 'nominal', title = 'Component'),
+                               alt.Tooltip(field = dropdown_1, type = 'nominal', title = 'Component'),
                                alt.Tooltip(field= 'total_cost', type = 'quantitative', title = '% Supplier Spend')])
              .properties(width = 750, height = 300, title = "% Total Supplier Spend by Component"))
    
