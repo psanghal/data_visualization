@@ -103,7 +103,8 @@ def supplier_dashaboard(data = 'filename_csv',
     # Add Conditions: 
     # create color condition for two pricing types:
     color_condition = alt.condition(select_highlight&select_price, 
-                                    alt.Color(radio_button, type = 'nominal'),
+                                    alt.Color(radio_button, type = 'nominal'), 
+                                    #(add legend= alt.Legend(title="") to change legend title
                                     alt.value('gray')) 
     
     # opacity:
@@ -174,7 +175,7 @@ def supplier_dashaboard(data = 'filename_csv',
     usage_supplier = (alt.Chart(df)
                  .mark_point(size = 40)
                  .transform_aggregate(groupby = [dropdown_1, radio_button, dropdown_2], cnt = 'count()')
-                 .encode(y = alt.Y(dropdown_2, type = 'nominal', axis = alt.Axis(title='Supplier & Component', labelFontSize=8)),
+                 .encode(y = alt.Y(dropdown_2, type = 'nominal', axis = alt.Axis(title='Supplier & Components', labelFontSize=8)),
                          x = alt.X('sum(cnt):Q', scale = alt.Scale(type = 'symlog'), axis = alt.Axis(title= 'Sum of count (Demand)')),
                          color = color_condition, # color_condition
                          opacity = opacity_condition,
@@ -264,6 +265,7 @@ def supplier_dashaboard(data = 'filename_csv',
                      color = color_condition, 
                      opacity= opacity_condition, 
                      tooltip =[alt.Tooltip(field = dropdown_2, type = 'nominal'),
+                               #alt.Tooltip(field = dropdown_1, type = 'nominal', title = 'Component'),
                                alt.Tooltip(field= 'total_cost', type = 'quantitative', title = '% Supplier Spend')])
              .properties(width = 750, height = 300, title = "% Total Supplier Spend by Component"))
    
