@@ -1,12 +1,12 @@
 # data_visualization
 
-## Caterpillar Supplier Assembly Dashboard: 
+## Supplier Assembly Dashboard: 
 
-An interacive app which can be used for profiling demand, cost and supplier spend for various components.  
+An interacive app which shows demand, cost and supplier spend for various supplied components.  
 
-Can be useful in exploring following questions:
+Helps explore following questions:
 
 1. Are there items above or below the average cost trend line? 
-2. Are there levers to realize cost savings? 
+2. Any strategic levers that can improve cost savings? 
 
 The dataset was pre-processed and stored as "components_dashboard.csv".   
