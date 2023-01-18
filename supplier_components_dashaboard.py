@@ -296,7 +296,7 @@ def supplier_dashaboard(data = 'filename_csv',
                                  .transform_filter(select_supplier)
                                  .transform_filter(brush)))
                       
-    # 4. vertically connect vconcat_plot_2 with supplier spend:
+    # 4. vertically connect vconcat_plot_2 with supplier spend and return dashboard:
     vconcat_plot_2 = (alt.vconcat(vconcat_plot_2, spend
                                  .transform_filter(select_comp)
                                  .transform_filter(select_price)
