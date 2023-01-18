@@ -10,6 +10,6 @@ c = supplier_dashaboard(data = 'components_dashboard.csv',
                                dropdown_2= 'supplier',
                                cutoff_option= 'cost')
 
-# Plot streamlit chart : 
+# Plot streamlit chart by passing above parameters: 
 import streamlit as st
 st.altair_chart(c, use_container_width=False)
